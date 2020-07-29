@@ -1,7 +1,7 @@
 #include "database.h"
 #include "date.h"
 #include "condition_parser.h"
-//#include "test_runner.h"
+#include "test_runner.h"
 
 #include <iostream>
 #include <stdexcept>
@@ -23,12 +23,12 @@ string	ParseEvent(istream& is)
 	return event;
 }
 
-/*void	TestAll();
-void	TestDatabase();*/
+void TestAll();
+void TestDatabase();
 
-int		main()
+int main()
 {
-//	TestAll();
+	TestAll();
 
 	Database db;
 
@@ -89,7 +89,7 @@ int		main()
   return 0;
 }
 
-/*void TestParseEvent()
+void TestParseEvent()
 {
 	{
 		istringstream is("event");
@@ -114,4 +114,4 @@ void TestAll()
 	tr.RunTest(TestParseEvent, "TestParseEvent");
 	tr.RunTest(TestParseCondition, "TestParseCondition");
 	tr.RunTest(TestDatabase, "DB_test");
-}*/
+}

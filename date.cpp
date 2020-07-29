@@ -8,7 +8,7 @@ Date::Date(const uint16_t& n_year, const uint16_t &n_month, const uint16_t &n_da
 	, month(n_month)
 	, day(n_day) {}
 
-uint16_t	Date::GetYear() const
+uint16_t Date::GetYear() const
 {
 	return year;
 }
@@ -23,10 +23,9 @@ uint16_t Date::GetDay() const
 	return day;
 }
 
-Date		ParseDate(istream& is)
+Date ParseDate(istream& is)
 {
-	int16_t	year;
-	int16_t	month, day;
+	int16_t	year, month, day;
 
 	is >> year;
 	if (year < 0 || year > 9999)
@@ -43,7 +42,7 @@ Date		ParseDate(istream& is)
 	return Date(year, month, day);
 }
 
-void		SkipSymbol(istream& is)
+void SkipSymbol(istream& is)
 {
 	char d = is.peek();
 	if (d == '-')
@@ -55,39 +54,39 @@ void		SkipSymbol(istream& is)
 	}
 }
 
-ostream&	operator<<(ostream& out, const Date& date)
+ostream& operator<<(ostream& out, const Date& date)
 {
 	out << setw(4) << setfill('0') << date.GetYear() << '-' << setw(2)
 			<< setfill('0') << date.GetMonth() << '-' << setw(2) << setfill('0') << date.GetDay();
 	return out;
 }
 
-bool		operator<(const Date& lhs, const Date& rhs)
+bool operator<(const Date& lhs, const Date& rhs)
 {
 	return make_tuple(lhs.GetYear(), lhs.GetMonth(), lhs.GetDay()) < make_tuple(rhs.GetYear(), rhs.GetMonth(), rhs.GetDay());
 }
 
-bool		operator<=(const Date& lhs, const Date& rhs)
+bool operator<=(const Date& lhs, const Date& rhs)
 {
 	return make_tuple(lhs.GetYear(), lhs.GetMonth(), lhs.GetDay()) <= make_tuple(rhs.GetYear(), rhs.GetMonth(), rhs.GetDay());
 }
 
-bool		operator>(const Date& lhs, const Date& rhs)
+bool operator>(const Date& lhs, const Date& rhs)
 {
 	return make_tuple(lhs.GetYear(), lhs.GetMonth(), lhs.GetDay()) > make_tuple(rhs.GetYear(), rhs.GetMonth(), rhs.GetDay());
 }
 
-bool		operator>=(const Date& lhs, const Date& rhs)
+bool operator>=(const Date& lhs, const Date& rhs)
 {
 	return make_tuple(lhs.GetYear(), lhs.GetMonth(), lhs.GetDay()) >= make_tuple(rhs.GetYear(), rhs.GetMonth(), rhs.GetDay());
 }
 
-bool		operator==(const Date& lhs, const Date& rhs)
+bool operator==(const Date& lhs, const Date& rhs)
 {
 	return make_tuple(lhs.GetYear(), lhs.GetMonth(), lhs.GetDay()) == make_tuple(rhs.GetYear(), rhs.GetMonth(), rhs.GetDay());
 }
 
-bool		operator!=(const Date& lhs, const Date& rhs)
+bool operator!=(const Date& lhs, const Date& rhs)
 {
 	return make_tuple(lhs.GetYear(), lhs.GetMonth(), lhs.GetDay()) != make_tuple(rhs.GetYear(), rhs.GetMonth(), rhs.GetDay());
 }

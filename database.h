@@ -60,13 +60,13 @@ public:
 		return events;
 	}
 
-	pair<Date, string> Last(const Date& date) const;
+	string Last(const Date& date) const;
 private:
 	map<Date, pair<set<string>, vector<set<string>::const_iterator>>> db;
 };
 
 template <typename T, typename U>
-ostream&	operator<<(ostream& out, const pair<T, U>& p)
+ostream& operator<<(ostream& out, const pair<T, U>& p)
 {
 	out << p.first << ' ' << p.second;
 	return out;

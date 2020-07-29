@@ -15,16 +15,15 @@ public:
 	uint16_t GetDay() const;
 
 private:
-	const uint16_t		year;
-	const uint16_t		month, day;
+	const uint16_t year, month, day;
 };
 
-Date		ParseDate(istream& is);
-ostream&	operator<<(ostream& out, const Date& date);
-void		SkipSymbol(istream& is);
-bool		operator<(const Date& lhs, const Date& rhs);
-bool		operator<=(const Date& lhs, const Date& rhs);
-bool		operator>(const Date& lhs, const Date& rhs);
-bool		operator>=(const Date& lhs, const Date& rhs);
-bool		operator==(const Date& lhs, const Date& rhs);
-bool		operator!=(const Date& lhs, const Date& rhs);
+Date ParseDate(istream& is);
+ostream& operator<<(ostream& out, const Date& date);
+void SkipSymbol(istream& is);
+bool operator<(const Date& lhs, const Date& rhs);
+bool operator<=(const Date& lhs, const Date& rhs);
+bool operator>(const Date& lhs, const Date& rhs);
+bool operator>=(const Date& lhs, const Date& rhs);
+bool operator==(const Date& lhs, const Date& rhs);
+bool operator!=(const Date& lhs, const Date& rhs);

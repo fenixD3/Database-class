@@ -75,7 +75,7 @@ shared_ptr<Node> ParseExpression(It& current, It end, unsigned precedence)
 		left = ParseComparison(current, end);
 
 	const map<LogicalOperation, unsigned> precedences =
-	{ // LogicalOperation is enum of priorities of logical op
+	{
 			{LogicalOperation::Or, 1},
 			{LogicalOperation::And, 2}
 	};
